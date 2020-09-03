@@ -21,8 +21,64 @@
 footer{
     text-align: center;
     height: 70px;
+    background-color: #eeedf3;
 }
 
 .lbl-footer{
     margin-top: 20px;
 }
+
+.container-funcionarios{
+    min-height: 700px;
+    width: 500px;
+    /*border: 1px solid #1b1b12;*/
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.form-titulo{
+    background-color: #eeedf3;
+    text-align: center;
+    border: 1px solid #1b1b12;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.form-tabela{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-novo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: right;
+}
+
+.badge-botao{
+    padding:8px;
+}
+
+.tabela-controle{
+    padding: 3px;
+    width: 10px;
+    cursor: pointer;
+}
+
+.tabela-controle:hover{
+    color:forestgreen;
+}
+
+.tabela-controle-delete{
+    padding: 3px;
+    width: 10px;
+    cursor: pointer;
+    color: #cc1e1e;
+}
+
+.tabela-controle-delete:hover{
+    color: #830000;
+}    
