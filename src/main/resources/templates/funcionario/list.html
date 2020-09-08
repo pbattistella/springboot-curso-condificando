@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,9 +55,21 @@
                         <td th:text="${funcionario.id}"></td>
                         <td th:text="${funcionario.nome}"></td>
                         <td th:text="${funcionario.cargo}"></td>
-                        <td class="tabela-controle"><i class="fa fa-eye" aria-hidden="true"></i></td>
-                        <td class="tabela-controle"><i class="fa fa-edit" aria-hidden="true"></i></td>
-                        <td class="tabela-controle-delete"><i class="fa fa-trash" aria-hidden="true"></i></td>
+                        <td class="tabela-controle">
+                            <a th:href="@{'/funcionario/view/' + ${funcionario.id}}">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                        <td class="tabela-controle">
+                            <a th:href="@{'/funcionario/edit/' + ${funcionario.id}}">
+                                <i class="fa fa-edit" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                        <td class="tabela-controle-delete">
+                            <a th:href="@{'/funcionario/delete/' + ${funcionario.id}}">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
 
