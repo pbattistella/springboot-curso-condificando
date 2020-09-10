@@ -29,53 +29,48 @@
 		</div>
     </nav>
 
-    <div class="container container-funcionario">
-        <div class="form-titulo">
-            <h4>Funcionário</h4>
+    <div class="container-base">
+        <div class="container container-funcionario">
+            <div class="form-titulo">
+                <h4>Funcionário</h4>
+            </div>
+
+            <form th:action="@{/funcionario/save}" th:object="${funcionario}" 
+                method="POST">
+                <div class="form-group">
+                    <label>Código</label>
+                    <input class="form-control" type="number" 
+                        th:field="${funcionario.id}" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input class="form-control" type="text" th:field="${funcionario.nome}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Cargo</label>
+                    <select class="form-control" th:field="${funcionario.cargo}" required>
+                        <option value="Contador">Contador</option>
+                        <option value="Engenheiro">Engenheiro</option>
+                        <option value="Financeiro">Financeiro</option>
+                        <option value="Gerente">Gerente</option>
+                        <option value="TI">TI</option>
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-secondary btn-width" type="button"
+                        onclick="window.location.href='../list'">
+                        <i class="fa fa-ban" aria-hidden="true"></i> Cancelar
+                    </button>
+                    <button class="btn btn-success btn-width" type="submit">
+                        <i class="fa fa-save" aria-hidden="true"></i> Salvar
+                    </button>
+                </div>
+            </form>
         </div>
-
-        <form th:action="@{/funcionario/save}" th:object="${funcionario}" 
-            method="POST">
-            <div class="form-group">
-                <label>Código</label>
-                <input class="form-control" type="number" 
-                    th:field="${funcionario.id}" readonly>
-            </div>
-
-            <div class="form-group">
-                <label>Nome</label>
-                <input class="form-control" type="text" th:field="${funcionario.nome}" required>
-            </div>
-
-            <div class="form-group">
-                <label>Cargo</label>
-                <select class="form-control" th:field="${funcionario.cargo}" required>
-                    <option value="Contador">Contador</option>
-                    <option value="Engenheiro">Engenheiro</option>
-                    <option value="Financeiro">Financeiro</option>
-                    <option value="Gerente">Gerente</option>
-                    <option value="TI">TI</option>
-                </select>
-
-            </div>
-
-            <div class="form-group">
-                <button class="btn btn-secondary btn-width" type="button"
-                    onclick="window.location.href='../list'">
-                    <i class="fa fa-ban" aria-hidden="true"></i> Cancelar
-                </button>
-                <button class="btn btn-success btn-width" type="submit">
-                    <i class="fa fa-save" aria-hidden="true"></i> Salvar
-                </button>
-
-            </div>
-
-        </form>
-
-        
-
-        
-        
     </div>
     
 

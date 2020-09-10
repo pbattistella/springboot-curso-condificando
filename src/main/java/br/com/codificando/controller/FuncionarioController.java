@@ -43,13 +43,14 @@ public class FuncionarioController {
 			System.out.println("Erro ao salvar: " + e.getMessage());
 		}
 		
-		return "redirect:/funcionario/view/" + funcionario.getId();
+		return "redirect:/funcionario/view/" + funcionario.getId() + "/" + true;
 		
 	}
 	
-	@GetMapping("/funcionario/view/{id}")
-	public String viewFuncionario(@PathVariable long id, Model model) {
+	@GetMapping("/funcionario/view/{id}/{salvo}")
+	public String viewFuncionario(@PathVariable long id, @PathVariable boolean salvo, Model model) {
 		model.addAttribute("funcionario", funcionarioRespository.findById(id));
+		model.addAttribute("salvo", salvo);
 		return "funcionario/view";
 	}
 	
@@ -77,13 +78,7 @@ public class FuncionarioController {
 			System.out.println("Erro: " + e.getMessage());
 		}
 		return "redirect:/funcionario/list";
-		
-		
 	}
-	
-	
-	
-	
 	
 
 }

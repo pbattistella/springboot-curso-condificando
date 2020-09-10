@@ -29,42 +29,42 @@
 		</div>
     </nav>
 
-    <div class="container container-funcionario">
-        <div class="form-titulo">
-            <h4>Funcionário</h4>
+    <div class="container-base">
+        <div class="container container-funcionario">
+            <div class="form-titulo">
+                <h4>Funcionário</h4>
+            </div>
+
+            <div th:if="${salvo}" class="alert alert-success">
+                Funcionário salvo com sucesso!
+            </div>
+
+            <form th:object="${funcionario}">
+                <div class="form-group">
+                    <label>Código</label>
+                    <input class="form-control" type="number" 
+                        th:field="${funcionario.id}" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input class="form-control" type="text" th:field="${funcionario.nome}" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Cargo</label>
+                    <input class="form-control" type="text" th:field="${funcionario.cargo}" readonly>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-secondary btn-voltar-width" type="button"
+                        onclick="window.location.href='../../list'">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar
+                    </button>
+                </div>
+            </form>
         </div>
-
-        <form th:object="${funcionario}">
-            <div class="form-group">
-                <label>Código</label>
-                <input class="form-control" type="number" 
-                    th:field="${funcionario.id}" readonly>
-            </div>
-
-            <div class="form-group">
-                <label>Nome</label>
-                <input class="form-control" type="text" th:field="${funcionario.nome}" readonly>
-            </div>
-
-            <div class="form-group">
-                <label>Cargo</label>
-                <input class="form-control" type="text" th:field="${funcionario.cargo}" readonly>
-            </div>
-
-            <div class="form-group">
-                <button class="btn btn-secondary btn-voltar-width" type="button"
-                    onclick="window.location.href='../list'">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar
-                </button>
-            </div>
-
-        </form>
-
-        
-
-        
-        
-    </div>
+    </div>    
     
 
     <!--FOOTER-->

@@ -29,52 +29,47 @@
 		</div>
     </nav>
 
-    <div class="container container-funcionario">
-        <div class="form-titulo">
-            <h4>Funcionário</h4>
+    <div class="container-base">
+        <div class="container container-funcionario">
+            <div class="form-titulo">
+                <h4>Funcionário</h4>
+            </div>
+
+            <form th:action="@{/funcionario/delete}" th:object="${funcionario}" 
+                method="POST">
+
+                <div class="alert alert-danger">
+                    Você deseja realmente apagar o funcionário?
+                </div>
+
+                <div class="form-group">
+                    <label>Código</label>
+                    <input class="form-control" type="number" 
+                        th:field="${funcionario.id}" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input class="form-control" type="text" th:field="${funcionario.nome}" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Cargo</label>
+                    <input class="form-control" type="text" th:field="${funcionario.cargo}" readonly>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-secondary btn-width" type="button"
+                        onclick="window.location.href='../list'">
+                        <i class="fa fa-ban" aria-hidden="true"></i> Cancelar
+                    </button>
+                    <button class="btn btn-danger btn-width" type="submit">
+                        <i class="fa fa-trash" aria-hidden="true"></i> Deletar
+                    </button>
+                </div>
+            </form>
         </div>
-
-        <form th:action="@{/funcionario/delete}" th:object="${funcionario}" 
-            method="POST">
-
-            <div class="alert alert-danger">
-                Você deseja realmente apagar o funcionário?
-            </div>
-
-            <div class="form-group">
-                <label>Código</label>
-                <input class="form-control" type="number" 
-                    th:field="${funcionario.id}" readonly>
-            </div>
-
-            <div class="form-group">
-                <label>Nome</label>
-                <input class="form-control" type="text" th:field="${funcionario.nome}" readonly>
-            </div>
-
-            <div class="form-group">
-                <label>Cargo</label>
-                <input class="form-control" type="text" th:field="${funcionario.cargo}" readonly>
-            </div>
-
-            <div class="form-group">
-                <button class="btn btn-secondary btn-width" type="button"
-                    onclick="window.location.href='../list'">
-                    <i class="fa fa-ban" aria-hidden="true"></i> Cancelar
-                </button>
-                <button class="btn btn-danger btn-width" type="submit">
-                    <i class="fa fa-trash" aria-hidden="true"></i> Deletar
-                </button>
-
-            </div>
-
-        </form>
-
-        
-
-        
-        
-    </div>
+    </div>    
     
 
     <!--FOOTER-->

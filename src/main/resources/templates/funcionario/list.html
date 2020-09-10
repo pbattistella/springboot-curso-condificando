@@ -56,7 +56,7 @@
                         <td th:text="${funcionario.nome}"></td>
                         <td th:text="${funcionario.cargo}"></td>
                         <td class="tabela-controle">
-                            <a th:href="@{'/funcionario/view/' + ${funcionario.id}}">
+                            <a th:href="@{'/funcionario/view/' + ${funcionario.id} + '/' + ${false}}">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
                             </a>
                         </td>
