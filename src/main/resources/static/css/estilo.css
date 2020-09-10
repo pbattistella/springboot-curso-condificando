@@ -110,6 +110,9 @@ input{
     text-align: center;
 }
 
+select{
+    text-align-last: center;
+}
 
 @media screen and (max-width: 500px){
     .container-funcionarios{

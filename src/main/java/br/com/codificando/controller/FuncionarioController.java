@@ -53,5 +53,37 @@ public class FuncionarioController {
 		return "funcionario/view";
 	}
 	
+	@GetMapping("/funcionario/edit/{id}")
+	public String editFuncionario(@PathVariable long id, Model model) {
+		
+		model.addAttribute("funcionario", funcionarioRespository.findById(id));
+		return "funcionario/edit";
+		
+	}
+	
+	@GetMapping("/funcionario/delete/{id}")
+	public String deleteFuncionario(@PathVariable long id, Model model) {
+		
+		model.addAttribute("funcionario", funcionarioRespository.findById(id));
+		return "funcionario/delete";
+		
+	}
+	
+	@PostMapping("/funcionario/delete")
+	public String deleteFuncionario(Funcionario funcionario) {
+		try {
+			funcionarioRespository.delete(funcionario);
+		} catch (Exception e) {
+			System.out.println("Erro: " + e.getMessage());
+		}
+		return "redirect:/funcionario/list";
+		
+		
+	}
+	
+	
+	
+	
+	
 
 }
