@@ -47,6 +47,24 @@ footer{
     padding: 10px;
 }
 
+.container-projetos{
+    min-height: 700px;
+    width: 70%;
+    /*border: 1px solid #1b1b12;*/
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.container-projeto{
+    width: 500px;
+    border: 1px solid #1b1b12;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
 
 .form-titulo{
     background-color: #eeedf3;
