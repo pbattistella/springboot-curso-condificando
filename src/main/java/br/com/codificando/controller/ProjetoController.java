@@ -45,14 +45,44 @@ public class ProjetoController {
 			System.out.println("Erro: " + e.getMessage());
 		}
 		
-		return "redirect:/projeto/edit/" + projeto.getId();
+		return "redirect:/projeto/view/" + projeto.getId() + "/" + true;
+	}
+	
+	@GetMapping("/projeto/view/{id}/{msg}")
+	public String viewProjeto(@PathVariable long id, @PathVariable boolean msg, Model model) {
+		model.addAttribute("projeto", projetoRepository.findById(id));
+		model.addAttribute("msgsalvo", msg);
+		return "projeto/view";
 	}
 	
 	@GetMapping("/projeto/edit/{id}")
-	public String editProjeto(@PathVariable long id) {
-		//TODO: continuo no próximo episódio
-		System.out.println("ID criado: " + id);
-		return "redirect:projeto/list";//vou mudar aqui
+	public String editProjeto(@PathVariable long id, Model model) {
+		model.addAttribute("projeto", projetoRepository.findById(id));
+		model.addAttribute("funcionarios", funcionarioRespository.findAllByCargo("Gerente"));
+		return "projeto/edit";
 	}
+	
+	@GetMapping("/projeto/delete/{id}")
+	public String deleteProjeto(@PathVariable long id, Model model) {
+		
+		model.addAttribute("projeto", projetoRepository.findById(id));
+		return "projeto/delete";
+		
+	}
+	
+	@PostMapping("/projeto/delete")
+	public String deleteProjeto(Projeto projeto) {
+		try {
+			projetoRepository.delete(projeto);
+		} catch (Exception e) {
+			System.out.println("Erro: " + e.getMessage());
+		}
+		
+		return "redirect:/projeto/list";
+		
+		
+	}
+	
+	
 
 }

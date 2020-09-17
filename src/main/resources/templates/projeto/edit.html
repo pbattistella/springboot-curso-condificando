@@ -40,22 +40,22 @@
                 <div class="form-group">
                     <label>Código</label>
                     <input class="form-control" type="number" 
-                        th:field="*{id}" readonly>
+                        th:field="${projeto.id}" readonly>
                 </div>
 
                 <div class="form-group">
                     <label>Nome</label>
-                    <input class="form-control" type="text" th:field="*{nome}" required>
+                    <input class="form-control" type="text" th:field="${projeto.nome}" required>
                 </div>
 
                 <div class="form-group">
                     <label>Descrição</label>
-                    <input class="form-control" type="text" th:field="*{descricao}" required>
+                    <input class="form-control" type="text" th:field="${projeto.descricao}" required>
                 </div>
 
                 <div class="form-group">
                     <label>Status</label>
-                    <select class="form-control" th:field="*{status}" required>
+                    <select class="form-control" th:field="${projeto.status}" required>
                         <option value="Em análise">Em análise</option>
                         <option value="Análise realizada">Análise realizada</option>
                         <option value="Análise aprovada">Análise aprovada</option>
@@ -69,7 +69,7 @@
 
                 <div class="form-group">
                     <label>Risco</label>
-                    <select class="form-control" th:field="*{risco}" required>
+                    <select class="form-control" th:field="${projeto.risco}" required>
                         <option value="Risco baixo">Risco baixo</option>
                         <option value="Risco médio">Risco médio</option>
                         <option value="Risco alto">Risco alto</option>
@@ -78,29 +78,29 @@
 
                 <div class="form-group">
                     <label>Orçamento</label>
-                    <input type="number" class="form-control" th:field="*{orcamento}" 
+                    <input type="number" class="form-control" th:field="${projeto.orcamento}" 
                         required placeholder="R$ 0,00">
                 </div>
 
 
                 <div class="form-group">
                     <label>Data Início</label>
-                    <input type="date" class="form-control" th:field="*{dataInicio}" required>
+                    <input type="date" class="form-control" th:field="${projeto.dataInicio}" required>
                 </div>
 
                 <div class="form-group">
                     <label>Data Previsão</label>
-                    <input type="date" class="form-control" th:field="*{dataPrevisao}" required>
+                    <input type="date" class="form-control" th:field="${projeto.dataPrevisao}" required>
                 </div>
 
                 <div class="form-group">
                     <label>Data Final</label>
-                    <input type="date" class="form-control" th:field="*{dataFinal}" required>
+                    <input type="date" class="form-control" th:field="${projeto.dataFinal}" required>
                 </div>
 
                 <div class="form-group">
                     <label>Gerente</label>
-                    <select th:field="*{gerente.id}" class="form-control" required>
+                    <select th:field="${projeto.gerente.id}" class="form-control" required>
                         <option th:each="funcionario : ${funcionarios}" 
                             th:value="${funcionario.id}"
                             th:text="${funcionario.nome}"> </option>
@@ -109,7 +109,7 @@
 
                 <div class="form-group">
                     <button class="btn btn-secondary btn-width" type="button"
-                        onclick="window.location.href='./list'">
+                        onclick="window.location.href='../list'">
                         <i class="fa fa-ban" aria-hidden="true"></i> Cancelar
                     </button>
                     <button class="btn btn-success btn-width" type="submit">
