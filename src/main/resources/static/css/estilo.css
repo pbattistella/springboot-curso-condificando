@@ -49,7 +49,7 @@ footer{
 
 .container-projetos{
     min-height: 700px;
-    width: 70%;
+    width: 90%;
     /*border: 1px solid #1b1b12;*/
     border-radius: 10px;
     margin-top: 20px;
@@ -104,18 +104,6 @@ footer{
     color:forestgreen;
 }
 
-.tabela-controle-delete{
-    padding: 3px;
-    width: 10px;
-}
-.tabela-controle-delete > a{ 
-    color: #cc1e1e;
-}
-
-.tabela-controle-delete > a:hover{
-    color: #830000;
-}    
-
 .btn-width{
     width: 49%;
 }
@@ -132,6 +120,29 @@ select{
     text-align-last: center;
 }
 
+
+.alert{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.container-base{
+    min-height: 700px;
+}
+
+.modal-header{
+	background-color: #cc1e1e;
+	color: white;
+}
+
+.list-group{
+	text-align: center;
+}
+
+.cl-dark{
+	color: white;
+}
+
 @media screen and (max-width: 500px){
     .container-funcionarios{
         width: 300px;
@@ -142,11 +153,12 @@ select{
     }
 }
 
-.alert{
-    margin-top: 15px;
-    text-align: center;
-}
 
-.container-base{
-    min-height: 700px;
+@media screen and (max-width:800px){
+	.container-projetos{
+		width: 99%;
+	}
+	.container-projeto {
+    	width: 97%;
+^	}	
 }

@@ -32,7 +32,8 @@ public class ProjetoController {
 	public String addProjeto(Model model) {
 		
 		model.addAttribute("projeto", new Projeto());
-		model.addAttribute("funcionarios", funcionarioRespository.findAllByCargo("Gerente"));
+		model.addAttribute("gerentes", funcionarioRespository.findAllByCargo("Gerente"));
+		model.addAttribute("funcionarios", funcionarioRespository.findByCargoNot("Gerente"));
 		return "projeto/add";
 		
 	}
@@ -58,31 +59,20 @@ public class ProjetoController {
 	@GetMapping("/projeto/edit/{id}")
 	public String editProjeto(@PathVariable long id, Model model) {
 		model.addAttribute("projeto", projetoRepository.findById(id));
-		model.addAttribute("funcionarios", funcionarioRespository.findAllByCargo("Gerente"));
+		model.addAttribute("gerentes", funcionarioRespository.findAllByCargo("Gerente"));
+		model.addAttribute("funcionarios", funcionarioRespository.findByCargoNot("Gerente"));
 		return "projeto/edit";
 	}
 	
 	@GetMapping("/projeto/delete/{id}")
-	public String deleteProjeto(@PathVariable long id, Model model) {
+	public String deleteProjeto(@PathVariable long id) {
 		
-		model.addAttribute("projeto", projetoRepository.findById(id));
-		return "projeto/delete";
-		
-	}
-	
-	@PostMapping("/projeto/delete")
-	public String deleteProjeto(Projeto projeto) {
 		try {
-			projetoRepository.delete(projeto);
+			projetoRepository.deleteById(id);
 		} catch (Exception e) {
 			System.out.println("Erro: " + e.getMessage());
 		}
-		
 		return "redirect:/projeto/list";
-		
-		
 	}
-	
-	
 
 }

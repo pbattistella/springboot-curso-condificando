@@ -92,6 +92,16 @@
                     <label>Gerente</label>
                     <input type="text" class="form-control" th:field="${projeto.gerente.nome}" readonly>
                 </div>
+                
+                <div class="form-group">
+                    <ul class="list-group">
+                    	<li class="list-group-item bg-dark cl-dark">Funcionários</li>
+                    	<li class="list-group-item"
+                    		th:each="funcionario : ${projeto.get().getFuncionarios()}"
+                    		th:text="${funcionario}"
+                    	></<li>
+                    </ul>
+                </div>
 
                 <div class="form-group">
                     <button class="btn btn-secondary btn-voltar-width" type="button"

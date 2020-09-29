@@ -1,9 +1,12 @@
 package br.com.codificando.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.Size;
 
 import org.springframework.lang.NonNull;
@@ -22,6 +25,9 @@ public class Funcionario {
 	@NonNull
 	@Size(max=50)
 	private String cargo;
+	
+	@ManyToMany(mappedBy = "funcionarios")
+	private List<Projeto> projetos;
 
 	public Long getId() {
 		return id;
@@ -46,10 +52,19 @@ public class Funcionario {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+	
+	public List<Projeto> getProjetos() {
+		return projetos;
+	}
+
+	public void setProjetos(List<Projeto> projetos) {
+		this.projetos = projetos;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Funcionario " + id + " nome: " + nome + ", cargo: " + cargo;
+		return nome + " - " + cargo;
 	}
 
 }

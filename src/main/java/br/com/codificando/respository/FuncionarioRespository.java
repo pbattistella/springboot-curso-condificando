@@ -8,6 +8,7 @@ import br.com.codificando.model.Funcionario;
 
 public interface FuncionarioRespository extends JpaRepository<Funcionario, Long>{
 	
-	public List findAllByCargo(String cargo);
+	public List<Funcionario> findAllByCargo(String cargo);
+	public List<Funcionario> findByCargoNot(String cargo);
 
 }

@@ -1,6 +1,7 @@
 package br.com.codificando.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
 
@@ -54,6 +57,12 @@ public class Projeto {
 	@OneToOne
 	@JoinColumn(name="funcionario_id", referencedColumnName = "id")
 	private Funcionario gerente;
+	
+	@ManyToMany
+	@JoinTable(name="projeto_funcionario",
+			joinColumns = @JoinColumn(name = "projeto_id"),
+			inverseJoinColumns = @JoinColumn(name = "funcionario_id"))
+	private List<Funcionario> funcionarios;
 
 	public Long getId() {
 		return id;
@@ -133,6 +142,14 @@ public class Projeto {
 
 	public void setGerente(Funcionario gerente) {
 		this.gerente = gerente;
+	}
+	
+	public List<Funcionario> getFuncionarios() {
+		return funcionarios;
+	}
+
+	public void setFuncionarios(List<Funcionario> funcionarios) {
+		this.funcionarios = funcionarios;
 	}
 
 	@Override

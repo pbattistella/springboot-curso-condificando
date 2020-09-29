@@ -101,10 +101,20 @@
                 <div class="form-group">
                     <label>Gerente</label>
                     <select th:field="${projeto.gerente.id}" class="form-control" required>
-                        <option th:each="funcionario : ${funcionarios}" 
+                        <option th:each="funcionario : ${gerentes}" 
                             th:value="${funcionario.id}"
                             th:text="${funcionario.nome}"> </option>
                     </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Funcionários</label>
+                    <select th:field="*{funcionarios}" class="form-control" required multiple="multiple" size="10">
+                        <option th:each="pf : ${funcionarios}" 
+                            th:value="${pf.id}"
+                            th:text="${pf}"> </option>
+                    </select>
+                    <small class="form-text text-muted">Selecione os funcionários do projeto.</small>
                 </div>
 
                 <div class="form-group">
