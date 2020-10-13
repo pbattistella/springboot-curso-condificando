@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.com.codificando.model.Projeto;
-import br.com.codificando.respository.FuncionarioRespository;
-import br.com.codificando.respository.ProjetoRepository;
+import br.com.codificando.repository.FuncionarioRepository;
+import br.com.codificando.repository.ProjetoRepository;
 
 @Controller
 public class ProjetoController {
@@ -19,7 +19,7 @@ public class ProjetoController {
 	ProjetoRepository projetoRepository;
 	
 	@Autowired
-	FuncionarioRespository funcionarioRespository;
+	FuncionarioRepository funcionarioRespository;
 	
 	@GetMapping("/projeto/list")
 	public String listProjeto(Model model) {

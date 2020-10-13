@@ -24,8 +24,18 @@
 			<div class="navbar-nav">
 				<a class="nav-item nav-link active" th:href="@{/}">Principal</a>
 				<a class="nav-item nav-link" th:href="@{/projeto/list}">Projetos</a>
-				<a class="nav-item nav-link" th:href="@{/funcionario/list}">Funcionarios</a>
+				<a class="nav-item nav-link" th:href="@{/funcionario/list}">Funcionários</a>
 			</div>
+			
+			<!-- BOTÃO LOGOUT-->
+            <form method="post" class="navbar-form navbar-right" th:action="@{/logout}">
+                <button type="submit" class="btn btn-default btn-sair">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </form>
+			
+			
+			
 		</div>
     </nav>
 

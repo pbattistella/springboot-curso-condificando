@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.com.codificando.model.Funcionario;
-import br.com.codificando.respository.FuncionarioRespository;
+import br.com.codificando.repository.FuncionarioRepository;
 
 @Controller
 public class FuncionarioController {
 	
 	@Autowired
-	private FuncionarioRespository funcionarioRespository;
+	private FuncionarioRepository funcionarioRespository;
 	
 	@GetMapping("/funcionario/list")
 	public String listFuncionarios(Model model) {
