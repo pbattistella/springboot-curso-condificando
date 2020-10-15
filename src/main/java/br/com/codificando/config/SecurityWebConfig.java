@@ -21,8 +21,8 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter{
 			//Habilitar ou desabilitar páginas
 			.authorizeRequests()
 			.antMatchers("/").permitAll()
-			.antMatchers("/funcionarios/**").hasRole("padrao")
-			.antMatchers("/projetos/**").hasRole("padrao")
+			.antMatchers("/funcionario/**").hasRole("padrao")
+			.antMatchers("/projeto/**").hasRole("padrao")
 			//.antMatchers("/usuarios/**").hasRole("padrao")
 			//Habilitar statics
 			.antMatchers("/bootstrap-4.5.2/**").permitAll()

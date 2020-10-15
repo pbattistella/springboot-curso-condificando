@@ -26,6 +26,14 @@
 				<a class="nav-item nav-link" th:href="@{/projeto/list}">Projetos</a>
 				<a class="nav-item nav-link" th:href="@{/funcionario/list}">Funcionários</a>
 			</div>
+			<!--  LOGOUT -->
+			<div class="div-login">
+				<form th:action="@{/logout}" class="navbar-form" method="POST">
+					<button class="btn btn-dark" type="submit">
+						<i class="fas fa-sign-out-alt"></i> Sair
+					</button>
+				</form>
+			</div>
 		</div>
     </nav>
 
