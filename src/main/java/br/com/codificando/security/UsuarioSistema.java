@@ -19,4 +19,5 @@ public class UsuarioSistema extends User {
 	public String getNome() {
 		return this.nome;
 	}
+	
 }

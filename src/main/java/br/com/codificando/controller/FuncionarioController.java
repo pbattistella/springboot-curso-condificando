@@ -2,6 +2,7 @@ package br.com.codificando.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +23,9 @@ public class FuncionarioController {
 	public String listFuncionarios(Model model) {
 		
 		model.addAttribute("funcionarios", funcionarioRespository.findAll(Sort.by("cargo")));
+		
+		//String login = SecurityContextHolder.getContext().getAuthentication().getName();
+		//System.out.println("Usuário logado: " + login);
 		
 		return "funcionario/list";
 	}
