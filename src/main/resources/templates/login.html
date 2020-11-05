@@ -26,6 +26,7 @@
 				<a class="nav-item nav-link active" th:href="@{/}">Principal</a>
 				<a class="nav-item nav-link" th:href="@{/projeto/list}">Projetos</a>
 				<a class="nav-item nav-link" th:href="@{/funcionario/list}">Funcionários</a>
+				<a class="nav-item nav-link" th:href="@{/usuario/edit}">Usuário</a>
 			</div>
 			<!--  LOGIN -->
 			<div class="div-login">
@@ -84,6 +85,10 @@
 				<input type="checkbox" id="remember-me" name="remember-me"/>
 				<label class="label-lembrar" for="remember-me">Lembrar?</label>
 			</div>
+			
+			<div class="form-group">
+	    		<a class="nav-link" th:href="@{/usuario/add}">Criar uma nova conta.</a>
+	    	</div>
 			
 		
 		</form>
