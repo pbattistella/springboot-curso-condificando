@@ -29,6 +29,7 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter{
 			//Habilitar statics
 			.antMatchers("/bootstrap-4.5.2/**").permitAll()
 			.antMatchers("/css/**").permitAll()
+			.antMatchers("/img/**").permitAll()
 			.antMatchers("/fontawesome-5.14.0/**").permitAll()
 			.antMatchers("/js/**").permitAll()
 			//Outras autenticações
