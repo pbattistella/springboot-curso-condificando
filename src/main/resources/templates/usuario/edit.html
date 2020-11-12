@@ -55,36 +55,36 @@
         <form th:object="${usuario}"
             th:action="@{/usuario/save}" method="POST">
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Código</label>
-                <div class="col-sm-10">
+                <label class="col-sm-3 col-form-label">Código</label>
+                <div class="col-sm-9">
                     <input type="text" class="form-control" id="codigo" th:field="${usuario.id}" readonly>
                 </div>    
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Nome</label>
-                <div class="col-sm-10">
+                <label class="col-sm-3 col-form-label">Nome</label>
+                <div class="col-sm-9">
                     <input type="text" class="form-control" id="nome" th:field="${usuario.nome}" required>
                 </div>
             </div>
             
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Login</label>
-                <div class="col-sm-10">
+                <label class="col-sm-3 col-form-label">Login</label>
+                <div class="col-sm-9">
                     <input type="text" class="form-control" id="login" th:field="${usuario.login}" required>
                 </div>
             </div>
             
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Senha</label>
-                <div class="col-sm-10">
+                <label class="col-sm-3 col-form-label">Senha</label>
+                <div class="col-sm-9">
                     <input type="password" class="form-control" id="senha" th:field="${usuario.senha}" required>
                 </div>
             </div>
             
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Senha</label>
-                <div class="col-sm-10">
+                <label class="col-sm-3 col-form-label">Confirmar</label>
+                <div class="col-sm-9">
                     <input type="password" class="form-control" id="senha" th:field="*{senha}" required>
                 </div>
             </div>
